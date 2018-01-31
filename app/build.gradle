@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "app.main.wangliwei.enablehands"
+        minSdkVersion 22
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++14"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    google()
+    maven {
+        url "http://maven.aliyun.com/nexus/content/repositories/releases"
+    }
+}
+
+dependencies {
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.5.0") {
+        exclude group: "com.android.support"
+    }
+    implementation 'com.android.support:support-v4:26.1.0'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    //gson
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //rxjava
+    compile "io.reactivex.rxjava2:rxjava:2.1.0"
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //eventbus
+    compile 'org.greenrobot:eventbus:3.1.1'
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    //Sophix
+    compile 'com.aliyun.ams:alicloud-android-hotfix:3.1.9'
+    compile 'com.android.support:multidex:1.0.1'
+    //Dagger
+    compile 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    //recyclerview
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
