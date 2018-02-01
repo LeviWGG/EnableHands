@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
@@ -19,7 +20,12 @@ import butterknife.BindView;
 public class MainActivity extends BaseActivity {
     private Fragment fragment;
     private List<Fragment> fragmentList;
+    private List<Integer> iconList;
+    private Integer[] bottomTabIcon = {R.mipmap.home,R.mipmap.favorite,R.mipmap.account};
+    private List<Integer> iconPressList;
+    private Integer[] bottomIconPress = {R.mipmap.home_press,R.mipmap.favorite_press,R.mipmap.account_press};
     private FragmentTransaction ft;
+    private Integer pos_tab = null;
 
     @BindView(R.id.bottom_tab_layout)
     TabLayout bottmeTab;
@@ -33,7 +39,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        //addFragment();
     }
 
     @Override
@@ -42,6 +47,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initView() {
+        iconList = Arrays.asList(bottomTabIcon);
+        iconPressList = Arrays.asList(bottomIconPress);
         fragmentList = new ArrayList<>();
         fragmentList.add(new HomeFragment());
         fragmentList.add(new FavoriteFragment());
@@ -50,9 +57,14 @@ public class MainActivity extends BaseActivity {
         bottmeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                if(pos_tab != null) {
+                    bottmeTab.getTabAt(pos_tab).setIcon(iconList.get(pos_tab));
+                }
                 fragment = fragmentList.get(tab.getPosition());
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_content,fragment).commit();
+                pos_tab = tab.getPosition();
+                bottmeTab.getTabAt(pos_tab).setIcon(iconPressList.get(pos_tab));
             }
 
             @Override
@@ -69,17 +81,6 @@ public class MainActivity extends BaseActivity {
         bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.home).setText("首页"));
         bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.favorite).setText("关注"));
         bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.account).setText("我"));
-    }
-
-    private void addFragment() {
-        if(fragment == null) {
-            fragment = new HomeFragment();
-        }
-        if(!fragment.isAdded()) {
-            ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.fragment_content,fragment);
-            ft.show(fragment).commit();
-        }
     }
 
     /**

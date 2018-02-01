@@ -25,6 +25,7 @@ import butterknife.BindView;
  */
 public class HomeFragment extends BaseFragment {
     private View view;
+    private boolean isAdded = false;
     private String[] tabTitle = {"福利","Android","IOS","视频","资源","前端"};
 
     @BindView(R.id.toolbar)
@@ -45,8 +46,13 @@ public class HomeFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = super.onCreateView(inflater, container, savedInstanceState);
+        if(!isAdded) {
+            //避免重复绘制ToolBar上的图标
+            toolbar.inflateMenu(R.menu.menu_toolbar);
+            isAdded = true;
+        }
         initToolBar();
-        
+
         return view;
     }
 

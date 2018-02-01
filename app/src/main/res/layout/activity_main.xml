@@ -18,7 +18,8 @@
         android:id="@+id/bottom_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:tabIndicatorHeight="0dp">
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/bottom_tab_text_color">
 
     </android.support.design.widget.TabLayout>
 

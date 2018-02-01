@@ -25,9 +25,7 @@ public class FavoriteFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if(view == null) {
-            view = super.onCreateView(inflater, container, savedInstanceState);
-        }
+        view = super.onCreateView(inflater, container, savedInstanceState);
 
         return view;
     }

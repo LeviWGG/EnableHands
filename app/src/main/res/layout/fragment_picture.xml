@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     tools:context="app.main.wangliwei.enablehands.view.fragment.PictureFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_picture"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/content" />
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

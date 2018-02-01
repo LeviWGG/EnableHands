@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:layout_margin="3dp"
+    android:elevation="6dp"
+    app:cardCornerRadius="5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/view_picture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:layout_alignTop="@+id/view_picture"
+            android:layout_toRightOf="@+id/view_picture"
+            android:textSize="20sp"
+            android:text="这是标题"/>
+        <TextView
+            android:id="@+id/text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_title"
+            android:layout_toRightOf="@+id/view_picture"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="12sp"
+            android:text="这是内容ssssssssssssssssssssssssssssssssssssssssssssssssssssss"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
