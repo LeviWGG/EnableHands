@@ -3,30 +3,26 @@ package app.main.wangliwei.enablehands.view;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.FragmentTransaction;
+
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseActivity;
-import app.main.wangliwei.enablehands.view.adapter.ViewPagerAdapter;
-import app.main.wangliwei.enablehands.view.fragment.PictureFragment;
+import app.main.wangliwei.enablehands.view.fragment.FavoriteFragment;
+import app.main.wangliwei.enablehands.view.fragment.HomeFragment;
+import app.main.wangliwei.enablehands.view.fragment.PersonFragment;
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
-    private String[] tabTitle = {"福利","Android","IOS","视频","资源","前端"};
+    private Fragment fragment;
+    private List<Fragment> fragmentList;
+    private FragmentTransaction ft;
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
-    @BindView(R.id.tab_layout)
-    TabLayout tabLayout;
-
-    @BindView(R.id.view_pager)
-    ViewPager viewPager;
+    @BindView(R.id.bottom_tab_layout)
+    TabLayout bottmeTab;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -36,8 +32,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        initToolBar();
+        initView();
+        //addFragment();
     }
 
     @Override
@@ -45,18 +41,45 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    private void initToolBar() {
-        toolbar.setNavigationIcon(R.mipmap.other);
-        List<Fragment> list_fragment = new ArrayList<>();
-        for(int i=0;i<6;i++) {
-            list_fragment.add(new PictureFragment());
+    private void initView() {
+        fragmentList = new ArrayList<>();
+        fragmentList.add(new HomeFragment());
+        fragmentList.add(new FavoriteFragment());
+        fragmentList.add(new PersonFragment());
+
+        bottmeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                fragment = fragmentList.get(tab.getPosition());
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_content,fragment).commit();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.home).setText("首页"));
+        bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.favorite).setText("关注"));
+        bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.account).setText("我"));
+    }
+
+    private void addFragment() {
+        if(fragment == null) {
+            fragment = new HomeFragment();
         }
-
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),
-                list_fragment,Arrays.asList(tabTitle));
-        viewPager.setAdapter(viewPagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-
+        if(!fragment.isAdded()) {
+            ft = getSupportFragmentManager().beginTransaction();
+            ft.add(R.id.fragment_content,fragment);
+            ft.show(fragment).commit();
+        }
     }
 
     /**
