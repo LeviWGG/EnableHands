@@ -15,10 +15,10 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="28dp"
+            android:layout_height="32dp"
+            app:title="能手"
             app:layout_scrollFlags="scroll|enterAlways"
             android:layout_marginTop="30dp">
-
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
@@ -28,7 +28,6 @@
             app:tabMode="scrollable"
             app:tabIndicatorColor="@color/white"
             android:layout_marginTop="10dp">
-
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -37,7 +36,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
     </android.support.v4.view.ViewPager>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_floating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:elevation="3dp"
+        android:layout_margin="15dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@mipmap/up_white"/>
 
 </android.support.design.widget.CoordinatorLayout>

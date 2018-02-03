@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/fragment_content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/fragment_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </FrameLayout>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/bottom_tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="@color/bottom_tab_text_color">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/bottom_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:tabIndicatorHeight="0dp"
+            app:tabSelectedTextColor="@color/bottom_tab_text_color">
+        </android.support.design.widget.TabLayout>
 
-    </android.support.design.widget.TabLayout>
+    </LinearLayout>
 
-</LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_left"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_nav_left"
+        app:menu="@menu/menu_nav_left"
+        app:insetForeground="@android:color/transparent">
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

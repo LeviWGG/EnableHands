@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private static final int HEADER_TYPE = 0;
+    private static final int NORMAL_TYPE = 0;
     private Context context;
     private Fragment fragment;
     private List<Picture> list;
@@ -41,9 +41,9 @@ public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
-        if(viewType == HEADER_TYPE) {
+        if(viewType == NORMAL_TYPE) {
             view = layoutInflater.inflate(R.layout.item_picture,parent,false);
-            HeaderViewHolder viewHolder = new HeaderViewHolder(view);
+            NormalViewHolder viewHolder = new NormalViewHolder(view);
             return viewHolder;
         }
 
@@ -52,8 +52,8 @@ public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if(holder instanceof HeaderViewHolder) {
-            setHeaderType((HeaderViewHolder) holder,position);
+        if(holder instanceof NormalViewHolder) {
+            setHeaderType((NormalViewHolder) holder,position);
         }
     }
 
@@ -62,7 +62,7 @@ public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         return list.size();
     }
 
-    public class HeaderViewHolder extends RecyclerView.ViewHolder {
+    public class NormalViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.view_picture)
         ImageView mPicture;
 
@@ -72,14 +72,14 @@ public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         @BindView(R.id.text_content)
         TextView mContent;
 
-        public HeaderViewHolder(View itemView) {
+        public NormalViewHolder(View itemView) {
             super(itemView);
 
             ButterKnife.bind(this,itemView);
         }
     }
 
-    private void setHeaderType(final HeaderViewHolder viewHolder,int pos) {
+    private void setHeaderType(final NormalViewHolder viewHolder, int pos) {
         Picture picture = list.get(pos);
         Glide.with(fragment).load(picture.getPicture()).into(viewHolder.mPicture);
         viewHolder.mTitle.setText(picture.getTitle());

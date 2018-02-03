@@ -14,14 +14,17 @@ import java.util.List;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseFragment;
 import app.main.wangliwei.enablehands.bean.Picture;
+import app.main.wangliwei.enablehands.presenter.IPictureContract;
+import app.main.wangliwei.enablehands.presenter.PicturePresenterImp;
 import app.main.wangliwei.enablehands.view.adapter.PictureAdapter;
 import butterknife.BindView;
 
-public class PictureFragment extends BaseFragment {
+public class PictureFragment extends BaseFragment implements IPictureContract.IPictureView {
     private boolean isAdded = false;
     private View view;
     private String url = "http://img5.duitang.com/uploads/item/201512/31/20151231204455_AFLZG.jpeg";
     private PictureAdapter adapter;
+    private IPictureContract.IPicturePresenter iPicturePresenter;
 
     @BindView(R.id.recycle_picture)
     RecyclerView mRecyclerView;
@@ -36,6 +39,7 @@ public class PictureFragment extends BaseFragment {
         view = super.onCreateView(inflater,container,savedInstanceState);
         //避免重复绘制View
         if(!isAdded) {
+            iPicturePresenter = new PicturePresenterImp(this);
             initView();
             isAdded = true;
         }
@@ -58,4 +62,8 @@ public class PictureFragment extends BaseFragment {
         mRecyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public void scrollToTop() {
+        mRecyclerView.smoothScrollToPosition(0);
+    }
 }

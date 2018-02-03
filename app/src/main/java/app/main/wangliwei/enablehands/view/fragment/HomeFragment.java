@@ -2,6 +2,7 @@ package app.main.wangliwei.enablehands.view.fragment;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -11,14 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseFragment;
+import app.main.wangliwei.enablehands.bean.ScrollEvent;
 import app.main.wangliwei.enablehands.view.adapter.ViewPagerAdapter;
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,6 +41,9 @@ public class HomeFragment extends BaseFragment {
 
     @BindView(R.id.view_pager)
     ViewPager viewPager;
+
+    @BindView(R.id.btn_floating)
+    FloatingActionButton floatingActionButton;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -78,7 +86,11 @@ public class HomeFragment extends BaseFragment {
                 list_fragment, Arrays.asList(tabTitle));
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
 
+    @OnClick(R.id.btn_floating)
+    public void fbtnClick() {
+        EventBus.getDefault().post(new ScrollEvent());
     }
 
     @Override

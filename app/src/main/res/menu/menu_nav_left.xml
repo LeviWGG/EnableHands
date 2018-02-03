@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group_content"
+        android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@mipmap/home"
+            android:title="home" />
+        <item
+            android:id="@+id/menu_favorite"
+            android:icon="@mipmap/favorite"
+            android:title="favorite"/>
+    </group>
+
+    <group
+        android:id="@+id/group_person"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_account"
+            android:icon="@mipmap/account"
+            android:title="account"/>
+        <item
+            android:id="@+id/menu_messages"
+            android:icon="@mipmap/comments"
+            android:title="messages"/>
+        <item
+            android:id="@+id/menu_down"
+            android:icon="@mipmap/down"
+            android:title="down"/>
+    </group>
+</menu>
