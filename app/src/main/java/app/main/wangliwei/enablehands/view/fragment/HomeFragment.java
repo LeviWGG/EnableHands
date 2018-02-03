@@ -78,8 +78,10 @@ public class HomeFragment extends BaseFragment {
     private void initToolBar() {
         toolbar.setNavigationIcon(R.mipmap.other);
         List<Fragment> list_fragment = new ArrayList<>();
-        for(int i=0;i<6;i++) {
-            list_fragment.add(new PictureFragment());
+        list_fragment.add(new PictureFragment());
+        list_fragment.add(new PictureFragment());
+        for(int i=0;i<4;i++) {
+            list_fragment.add(new PersonFragment());
         }
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),

@@ -8,22 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseFragment;
-import app.main.wangliwei.enablehands.bean.Picture;
+import app.main.wangliwei.enablehands.bean.Weixin;
 import app.main.wangliwei.enablehands.presenter.IPictureContract;
 import app.main.wangliwei.enablehands.presenter.PicturePresenterImp;
-import app.main.wangliwei.enablehands.view.adapter.PictureAdapter;
+import app.main.wangliwei.enablehands.view.adapter.WeixinAdapter;
 import butterknife.BindView;
 
 public class PictureFragment extends BaseFragment implements IPictureContract.IPictureView {
     private boolean isAdded = false;
     private View view;
     private String url = "http://img5.duitang.com/uploads/item/201512/31/20151231204455_AFLZG.jpeg";
-    private PictureAdapter adapter;
+    private WeixinAdapter adapter;
     private IPictureContract.IPicturePresenter iPicturePresenter;
 
     @BindView(R.id.recycle_picture)
@@ -53,17 +52,22 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
     }
 
     private void initView() {
-        List<Picture> list = new ArrayList<>();
-        for(int i=0;i<10;i++) {
-            list.add(new Picture(0,url,"测试标题",""));
-        }
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapter = new PictureAdapter(getActivity(),this,list);
-        mRecyclerView.setAdapter(adapter);
+//        List<Picture> list = new ArrayList<>();
+//        for(int i=0;i<10;i++) {
+//            list.add(new Picture(0,url,"测试标题",""));
+//        }
+        iPicturePresenter.getWeixinNews();
     }
 
     @Override
     public void scrollToTop() {
         mRecyclerView.smoothScrollToPosition(0);
+    }
+
+    @Override
+    public void setWeixinNews(List<Weixin.ResultBean.ListBean> list) {
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new WeixinAdapter(getActivity(),this,list);
+        mRecyclerView.setAdapter(adapter);
     }
 }
