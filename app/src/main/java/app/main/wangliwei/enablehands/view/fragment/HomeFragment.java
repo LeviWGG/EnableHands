@@ -79,7 +79,7 @@ public class HomeFragment extends BaseFragment {
         toolbar.setNavigationIcon(R.mipmap.other);
         List<Fragment> list_fragment = new ArrayList<>();
         list_fragment.add(new PictureFragment());
-        list_fragment.add(new PictureFragment());
+        list_fragment.add(new NewsFragment());
         for(int i=0;i<4;i++) {
             list_fragment.add(new PersonFragment());
         }
