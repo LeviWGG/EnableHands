@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="url" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -20,9 +21,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Update_Log.md" afterPath="$PROJECT_DIR$/Update_Log.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/adapter/NewsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/adapter/NewsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/NewsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/NewsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/WebDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/WebDetailActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_web_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_web_detail.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,12 +62,13 @@
       <file leaf-file-name="NewsAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/adapter/NewsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="1110">
               <caret line="95" column="79" lean-forward="false" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3075#3076#0" expanded="true" />
-                <element signature="e#3123#3124#0" expanded="true" />
+                <element signature="e#1228#1229#0" expanded="false" />
+                <element signature="e#1257#1258#0" expanded="false" />
+                <element signature="e#2003#2004#0" expanded="false" />
+                <element signature="e#2048#2049#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,10 +77,13 @@
       <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/HomeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
+            <state relative-caret-position="1050">
               <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1851#1852#0" expanded="false" />
+                <element signature="e#1896#1897#0" expanded="false" />
+                <element signature="e#2714#2715#0" expanded="false" />
+                <element signature="e#2775#2776#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,8 +95,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,12 +118,11 @@
       <file leaf-file-name="WebDetailActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/WebDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+            <state relative-caret-position="259">
+              <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#662#663#0" expanded="true" />
-                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#1434#1435#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,9 +131,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
+            <state relative-caret-position="1050">
               <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2164#2165#0" expanded="false" />
+                <element signature="e#2209#2210#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,14 +192,13 @@
       <file leaf-file-name="NewsFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/NewsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="795">
               <caret line="76" column="49" lean-forward="false" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1856#2737#0" expanded="true" />
-                <element signature="e#1999#2711#0" expanded="true" />
-                <element signature="e#2710#2711#0" expanded="true" />
-                <element signature="e#2736#2737#0" expanded="true" />
+                <element signature="e#1559#1560#0" expanded="false" />
+                <element signature="e#1604#1605#0" expanded="false" />
+                <element signature="e#1635#1636#0" expanded="false" />
+                <element signature="e#1679#1680#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2024,9 +2030,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/model/NewsModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_news.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_news_normal.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_web_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/adapter/NewsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/NewsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_web_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/WebDetailActivity.java" />
       </list>
     </option>
@@ -2055,8 +2061,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2125,102 +2132,9 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EnableHands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enablehands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EnableHands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enablehands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EnableHands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enablehands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EnableHands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enablehands" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2321,7 +2235,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518017771815" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518095710102" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2369,7 +2283,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518017771815" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518095710102" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2401,27 +2315,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2552,7 +2445,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518017771816" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518095710103" />
       </method>
     </configuration>
     <list size="1">
@@ -2605,7 +2498,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2778,14 +2671,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="40" lean-forward="false" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/http/interceptor/HttpLogInterceptor.java">
@@ -2894,7 +2787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3555">
           <caret line="381" column="35" lean-forward="false" selection-start-line="381" selection-start-column="28" selection-end-line="381" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2902,7 +2794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
           <caret line="88" column="1" lean-forward="false" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2932,7 +2823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2940,10 +2830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="e#1603#1604#0" expanded="false" />
-            <element signature="e#1651#1652#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2990,10 +2876,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
+        <state relative-caret-position="1050">
           <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1851#1852#0" expanded="false" />
+            <element signature="e#1896#1897#0" expanded="false" />
+            <element signature="e#2714#2715#0" expanded="false" />
+            <element signature="e#2775#2776#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3002,15 +2891,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
+        <state relative-caret-position="1050">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2164#2165#0" expanded="false" />
+            <element signature="e#2209#2210#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3027,12 +2919,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/adapter/NewsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="1110">
           <caret line="95" column="79" lean-forward="false" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3075#3076#0" expanded="true" />
-            <element signature="e#3123#3124#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="false" />
+            <element signature="e#1257#1258#0" expanded="false" />
+            <element signature="e#2003#2004#0" expanded="false" />
+            <element signature="e#2048#2049#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/NewsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="76" column="49" lean-forward="false" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
+          <folding>
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1604#1605#0" expanded="false" />
+            <element signature="e#1635#1636#0" expanded="false" />
+            <element signature="e#1679#1680#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3042,34 +2948,19 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/fragment/NewsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="76" column="49" lean-forward="false" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1856#2737#0" expanded="true" />
-            <element signature="e#1999#2711#0" expanded="true" />
-            <element signature="e#2710#2711#0" expanded="true" />
-            <element signature="e#2736#2737#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/main/wangliwei/enablehands/view/WebDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state relative-caret-position="259">
+          <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#1434#1435#0" expanded="true" />
           </folding>
         </state>
       </provider>
