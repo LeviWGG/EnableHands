@@ -7,6 +7,7 @@ import app.main.wangliwei.enablehands.bean.NewsInfo;
 import app.main.wangliwei.enablehands.model.NewsModel;
 
 public class NewsPresenterImp extends INewsContract.INewsPresenter {
+    private int id = 10;
 
     public NewsPresenterImp(INewsContract.INewsView view) {
         super(view);
@@ -23,11 +24,16 @@ public class NewsPresenterImp extends INewsContract.INewsPresenter {
 //                mView.setNewsInfo(t1348647909107Beans);
 //            }
 //        });
-        mModel.getNewsInfo(this);
+        mModel.getNewsInfo(this,id);
     }
 
     @Override
     public void setNewsInfo(List<NewsInfo.T1348647909107Bean> list) {
-        mView.setNewsInfo(list);
+        if(id <= 10) {
+            mView.setNewsInfo(list);
+        }else {
+            mView.loadMore(list);
+        }
+        id += 10;
     }
 }

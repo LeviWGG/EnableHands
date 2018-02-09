@@ -11,6 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
@@ -28,9 +32,13 @@ import butterknife.BindView;
 public class NewsFragment extends BaseFragment implements INewsContract.INewsView {
     private View view;
     private INewsContract.INewsPresenter iNewsPresenter;
+    private NewsAdapter adapter;
 
     @BindView(R.id.recycle_news)
     RecyclerView mRecyclerView;
+
+    @BindView(R.id.layout_news_refresh)
+    SmartRefreshLayout smartRefreshLayout;
 
     public NewsFragment() {
         // Required empty public constructor
@@ -54,12 +62,19 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
     }
 
     private void initView() {
+        smartRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                smartRefreshLayout.finishLoadmore(3000);
+                iNewsPresenter.getNewsInfo();
+            }
+        });
         iNewsPresenter.getNewsInfo();
     }
 
     @Override
     public void setNewsInfo(List<NewsInfo.T1348647909107Bean> list) {
-        NewsAdapter adapter = new NewsAdapter(this,list);
+        adapter = new NewsAdapter(this,list);
         adapter.setItemListener(new NewsAdapter.ItemListener() {
             @Override
             public void setOnClick(View view) {
@@ -82,5 +97,10 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void loadMore(List<NewsInfo.T1348647909107Bean> list) {
+        adapter.setLoadMoreDatas(list);
     }
 }

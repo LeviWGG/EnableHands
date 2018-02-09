@@ -104,10 +104,9 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.itemListener = itemListener;
     }
 
-//    public static class ItemOnClick implements View.OnClickListener {
-//        @Override
-//        public void onClick(View view) {
-//
-//        }
-//    }
+    public void setLoadMoreDatas(List<NewsInfo.T1348647909107Bean> list) {
+        mEntertainments.addAll(list);
+        notifyDataSetChanged();
+    }
+
 }

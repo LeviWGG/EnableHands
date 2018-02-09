@@ -23,17 +23,16 @@ public class NewsModel implements INewsContract.INewsModel {
 
 
     @Override
-    public void getNewsInfo(final INewsContract.INewsPresenter iNewsPresenter) {
+    public void getNewsInfo(final INewsContract.INewsPresenter iNewsPresenter,int id) {
         Retrofit retrofit = new ServiceFactory().create(NewsService.BASE_URL);
         NewsService newsService = retrofit.create(NewsService.class);
 
-        Observable<NewsInfo> observable = newsService.getNewsInfo(10);
+        Observable<NewsInfo> observable = newsService.getNewsInfo(id);
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap(new Function<NewsInfo, ObservableSource<List<NewsInfo.T1348647909107Bean>>>() {
                     @Override
                     public ObservableSource<List<NewsInfo.T1348647909107Bean>> apply(NewsInfo newsInfo) throws Exception {
-                        Log.d("news","flat");
                         return Observable.just(newsInfo.getT1348647909107());
                     }
                 }).filter(new Predicate<List<NewsInfo.T1348647909107Bean>>() {
@@ -47,7 +46,12 @@ public class NewsModel implements INewsContract.INewsModel {
         }).subscribe(new Consumer<List<NewsInfo.T1348647909107Bean>>() {
             @Override
             public void accept(List<NewsInfo.T1348647909107Bean> t1348647909107Beans) throws Exception {
-                Log.d("news","url: "+t1348647909107Beans.get(0).getUrl_3w());
+                //遍历新闻信息，去掉没有URL的子项
+                for(int i=0;i<t1348647909107Beans.size();i++) {
+                    if(t1348647909107Beans.get(i).getUrl() == null) {
+                        t1348647909107Beans.remove(i);
+                    }
+                }
                 iNewsPresenter.setNewsInfo(t1348647909107Beans);
             }
         });

@@ -1,9 +1,9 @@
 package app.main.wangliwei.enablehands.view;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
-import android.webkit.WebResourceRequest;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -15,6 +15,7 @@ import butterknife.BindView;
 
 public class WebDetailActivity extends BaseActivity {
     private Bundle bundle;
+    private WebView webView;
 
     @BindView(R.id.web_frame)
     FrameLayout frameLayout;
@@ -33,7 +34,7 @@ public class WebDetailActivity extends BaseActivity {
     }
 
     private void initView() {
-        WebView webView = new WebView(this);
+        webView = new WebView(this);
         WebSettings settings = webView.getSettings();
         settings.setDomStorageEnabled(true);
         //解决图片加载问题
@@ -51,5 +52,31 @@ public class WebDetailActivity extends BaseActivity {
         String url = bundle.getString("URL");
         Log.d("web","url: "+url);
         webView.loadUrl(url);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            if(webView.canGoBack()) {
+                webView.goBack();
+                return true;
+            }
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (webView != null) {
+            webView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+            webView.setTag(null);
+            webView.clearHistory();
+
+            ((ViewGroup) webView.getParent()).removeView(webView);
+            webView.destroy();
+            webView = null;
+        }
+        super.onDestroy();
     }
 }

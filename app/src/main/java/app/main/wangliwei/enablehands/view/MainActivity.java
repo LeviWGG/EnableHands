@@ -141,7 +141,8 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(this,"再按一次退出",Toast.LENGTH_LONG).show();
                 myHandler.sendEmptyMessageDelayed(0,3000);
             }else {
-                finish();
+//                finish();
+                System.exit(0);
             }
             return true;
         }

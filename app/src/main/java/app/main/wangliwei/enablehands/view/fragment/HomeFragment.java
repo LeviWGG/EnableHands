@@ -31,7 +31,7 @@ import butterknife.OnClick;
 public class HomeFragment extends BaseFragment {
     private View view;
     private boolean isAdded = false;
-    private String[] tabTitle = {"福利","Android","IOS","视频","资源","前端"};
+    private String[] tabTitle = {"福利","新闻","热点","视频","资源","前端"};
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;

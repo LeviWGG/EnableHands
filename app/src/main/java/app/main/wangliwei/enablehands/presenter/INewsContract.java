@@ -19,9 +19,10 @@ public interface INewsContract {
 
     interface INewsView {
         void setNewsInfo(List<NewsInfo.T1348647909107Bean> list);
+        void loadMore(List<NewsInfo.T1348647909107Bean> list);
     }
 
     interface INewsModel {
-        void getNewsInfo(INewsPresenter iNewsPresenter);
+        void getNewsInfo(INewsPresenter iNewsPresenter,int id);
     }
 }
