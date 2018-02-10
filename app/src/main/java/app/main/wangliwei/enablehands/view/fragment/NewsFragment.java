@@ -65,7 +65,7 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
         smartRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
-                smartRefreshLayout.finishLoadmore(3000);
+                smartRefreshLayout.finishLoadmore(2000);
                 iNewsPresenter.getNewsInfo();
             }
         });
@@ -82,7 +82,6 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
                     @Override
                     public void onClick(View view) {
                         if(((String)view.getTag()).equals("")) {
-                            Log.d("item","is null");
                             return;
                         }
                         Log.d("item","url: "+view.getTag());
