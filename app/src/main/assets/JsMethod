@@ -1,0 +1,25 @@
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" charset="UTF-8"/>
+
+        <script type="text/javascript">
+            function javacalljs(){
+                 document.getElementById("showmsg").innerHTML = "JAVA调用了JS的无参函数";
+            }
+
+            function javacalljswith(arg){
+                 document.getElementById("showmsg").innerHTML = (arg);
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <h3>Js Method</h3>
+        <h3 id="textshow">调用结果</h3>
+
+        <input type="button" value="JavascriptInterface" onclick="window.android.JsToJavaInterface('param')"/>
+    </body>
+
+</html>
