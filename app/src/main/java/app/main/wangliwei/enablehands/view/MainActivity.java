@@ -29,7 +29,7 @@ import app.main.wangliwei.enablehands.view.fragment.PersonFragment;
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
-    private Fragment fragment;
+    //private Fragment fragment;
     private List<Fragment> fragmentList;
     private List<Integer> iconList;
     private Integer[] bottomTabIcon = {R.mipmap.home,R.mipmap.favorite,R.mipmap.friends,R.mipmap.account};
@@ -82,7 +82,7 @@ public class MainActivity extends BaseActivity {
                 if(pos_tab != null) {
                     bottmeTab.getTabAt(pos_tab).setIcon(iconList.get(pos_tab));
                 }
-                fragment = fragmentList.get(tab.getPosition());
+                Fragment fragment = fragmentList.get(tab.getPosition());
                 ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_content,fragment).commit();
                 pos_tab = tab.getPosition();
