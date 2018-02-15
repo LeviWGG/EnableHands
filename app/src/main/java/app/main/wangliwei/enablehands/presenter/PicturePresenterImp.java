@@ -27,7 +27,7 @@ public class PicturePresenterImp extends IPictureContract.IPicturePresenter {
 
     public PicturePresenterImp(IPictureContract.IPictureView view) {
         super(view);
-        EventBus.getDefault().register(this);
+        //EventBus.getDefault().register(this);
     }
 
     @Override
@@ -62,6 +62,13 @@ public class PicturePresenterImp extends IPictureContract.IPicturePresenter {
                 mView.setWeixinNews(listBeans);
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+//        if(EventBus.getDefault().isRegistered(this)) {
+//            EventBus.getDefault().unregister(this);
+//        }
     }
 
     @Subscribe

@@ -15,6 +15,8 @@ public interface IPictureContract {
         public abstract void scrollToTop();
 
         public abstract void getWeixinNews();
+
+        public abstract void onDestroy();
     }
 
     interface IPictureView {

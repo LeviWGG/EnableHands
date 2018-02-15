@@ -70,4 +70,15 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
         adapter = new WeixinAdapter(getActivity(),this,list);
         mRecyclerView.setAdapter(adapter);
     }
+
+    @Override
+    public void onDestroyView() {
+        iPicturePresenter.onDestroy();
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

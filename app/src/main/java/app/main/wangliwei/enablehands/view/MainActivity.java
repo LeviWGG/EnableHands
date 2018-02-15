@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,13 +31,13 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
     //private Fragment fragment;
-    private List<Fragment> fragmentList;
+    //private List<Fragment> fragmentList;
     private List<Integer> iconList;
     private Integer[] bottomTabIcon = {R.mipmap.home,R.mipmap.favorite,R.mipmap.friends,R.mipmap.account};
     private List<Integer> iconPressList;
     private Integer[] bottomIconPress = {R.mipmap.home_press,R.mipmap.favorite_press,
             R.mipmap.friends_press,R.mipmap.account_press};
-    private FragmentTransaction ft;
+    private WeakReference<FragmentTransaction> ft;
     private Integer pos_tab = null;
 
     private static boolean enableExit = false;
@@ -70,11 +71,11 @@ public class MainActivity extends BaseActivity {
     private void initView() {
         iconList = Arrays.asList(bottomTabIcon);
         iconPressList = Arrays.asList(bottomIconPress);
-        fragmentList = new ArrayList<>();
-        fragmentList.add(new HomeFragment());
-        fragmentList.add(new FavoriteFragment());
-        fragmentList.add(new FriendsFragment());
-        fragmentList.add(new PersonFragment());
+        final List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(new WeakReference<>(new HomeFragment()).get());
+        fragmentList.add(new WeakReference<>(new FavoriteFragment()).get());
+        fragmentList.add(new WeakReference<>(new FriendsFragment()).get());
+        fragmentList.add(new WeakReference<>(new PersonFragment()).get());
 
         bottmeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -83,8 +84,8 @@ public class MainActivity extends BaseActivity {
                     bottmeTab.getTabAt(pos_tab).setIcon(iconList.get(pos_tab));
                 }
                 Fragment fragment = fragmentList.get(tab.getPosition());
-                ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_content,fragment).commit();
+                ft = new WeakReference<>(getSupportFragmentManager().beginTransaction());
+                ft.get().replace(R.id.fragment_content,fragment).commit();
                 pos_tab = tab.getPosition();
                 bottmeTab.getTabAt(pos_tab).setIcon(iconPressList.get(pos_tab));
             }
