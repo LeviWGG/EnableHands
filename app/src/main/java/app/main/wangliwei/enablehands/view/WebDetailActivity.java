@@ -1,6 +1,7 @@
 package app.main.wangliwei.enablehands.view;
 
 import android.os.Bundle;
+import android.os.Process;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
 import app.main.wangliwei.enablehands.R;
+import app.main.wangliwei.enablehands.app.MyApplication;
 import app.main.wangliwei.enablehands.base.BaseActivity;
 import butterknife.BindView;
 
@@ -34,7 +36,7 @@ public class WebDetailActivity extends BaseActivity {
     }
 
     private void initView() {
-        webView = new WebView(this);
+        webView = new WebView(MyApplication.getMyContext());
         WebSettings settings = webView.getSettings();
         settings.setDomStorageEnabled(true);
         //解决图片加载问题
@@ -78,5 +80,6 @@ public class WebDetailActivity extends BaseActivity {
             webView = null;
         }
         super.onDestroy();
+        Process.killProcess(Process.myPid());
     }
 }

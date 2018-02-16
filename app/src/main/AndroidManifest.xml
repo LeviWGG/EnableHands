@@ -20,7 +20,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.MainActivity">
         </activity>
-        <activity android:name=".view.WebDetailActivity" />
+        <activity android:name=".view.WebDetailActivity"
+            android:process="app.main.wangliwei.webdetail"/>
         <activity android:name=".view.SplashActivity"
             android:theme="@style/StartTheme">
             <intent-filter>
