@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
@@ -66,8 +67,8 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
 
     @Override
     public void setWeixinNews(List<Weixin.ResultBean.ListBean> list) {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapter = new WeixinAdapter(getActivity(),this,list);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(new WeakReference<>(getActivity()).get()));
+        adapter = new WeixinAdapter(new WeakReference<>(getActivity()).get(),this,list);
         mRecyclerView.setAdapter(adapter);
     }
 

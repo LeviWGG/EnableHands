@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
@@ -28,7 +29,7 @@ public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     public PictureAdapter(Context context,Fragment fragment,List<Picture> list) {
         this.context = context;
-        this.fragment = fragment;
+        this.fragment = new WeakReference<>(fragment).get();
         this.list = list;
         this.layoutInflater = LayoutInflater.from(context);
     }

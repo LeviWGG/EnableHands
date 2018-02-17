@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -78,10 +79,10 @@ public class HomeFragment extends BaseFragment {
     private void initToolBar() {
         toolbar.setNavigationIcon(R.mipmap.other);
         List<Fragment> list_fragment = new ArrayList<>();
-        list_fragment.add(new PictureFragment());
-        list_fragment.add(new NewsFragment());
+        list_fragment.add(new WeakReference<>(new PictureFragment()).get());
+        list_fragment.add(new WeakReference<>(new NewsFragment()).get());
         for(int i=0;i<4;i++) {
-            list_fragment.add(new PersonFragment());
+            list_fragment.add(new WeakReference<>(new PersonFragment()).get());
         }
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),
