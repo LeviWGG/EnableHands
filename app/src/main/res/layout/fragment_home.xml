@@ -18,7 +18,7 @@
             android:layout_height="32dp"
             app:title="能手"
             app:layout_scrollFlags="scroll|enterAlways"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="25dp">
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
@@ -28,8 +28,7 @@
             android:background="@color/white"
             app:tabMode="scrollable"
             app:tabIndicatorColor="@color/colorPrimary"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            android:layout_marginTop="25dp">
+            app:tabSelectedTextColor="@color/colorPrimary">
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

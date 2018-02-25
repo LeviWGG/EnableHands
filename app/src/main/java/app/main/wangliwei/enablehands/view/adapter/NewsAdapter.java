@@ -74,6 +74,12 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         @BindView(R.id.text_content)
         TextView content;
 
+        @BindView(R.id.text_source)
+        TextView source;
+
+        @BindView(R.id.text_time)
+        TextView time;
+
         @BindView(R.id.view_picture)
         ImageView imageView;
 
@@ -90,7 +96,9 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private void setNormalType(NormalViewHolder holder,int pos) {
         NewsInfo.T1348647909107Bean newsInfo = mEntertainments.get(pos);
         holder.title.setText(newsInfo.getTitle());
-        holder.content.setText(newsInfo.getDigest());
+        holder.time.setText(newsInfo.getLmodify().substring(0,10));
+        holder.source.setText(newsInfo.getSource());
+        //holder.content.setText(newsInfo.getDigest());
         Log.d("adapter","url: "+newsInfo.getUrl());
         holder.view.setTag(newsInfo.getUrl());
         Glide.with(fragment).load(newsInfo.getImgsrc()).into(holder.imageView);

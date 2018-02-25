@@ -7,11 +7,11 @@
         <item
             android:id="@+id/menu_home"
             android:icon="@mipmap/home"
-            android:title="home" />
+            android:title="新闻" />
         <item
             android:id="@+id/menu_favorite"
             android:icon="@mipmap/favorite"
-            android:title="favorite"/>
+            android:title="收藏"/>
     </group>
 
     <group
@@ -20,14 +20,14 @@
         <item
             android:id="@+id/menu_account"
             android:icon="@mipmap/account"
-            android:title="account"/>
+            android:title="联系"/>
         <item
             android:id="@+id/menu_messages"
             android:icon="@mipmap/comments"
-            android:title="messages"/>
+            android:title="消息"/>
         <item
             android:id="@+id/menu_down"
             android:icon="@mipmap/down"
-            android:title="down"/>
+            android:title="下载"/>
     </group>
 </menu>
