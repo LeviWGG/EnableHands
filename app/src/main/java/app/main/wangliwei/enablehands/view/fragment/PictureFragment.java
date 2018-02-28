@@ -1,9 +1,11 @@
 package app.main.wangliwei.enablehands.view.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import app.main.wangliwei.enablehands.base.BaseFragment;
 import app.main.wangliwei.enablehands.bean.Weixin;
 import app.main.wangliwei.enablehands.presenter.IPictureContract;
 import app.main.wangliwei.enablehands.presenter.PicturePresenterImp;
+import app.main.wangliwei.enablehands.view.WebDetailActivity;
 import app.main.wangliwei.enablehands.view.adapter.WeixinAdapter;
 import butterknife.BindView;
 
@@ -69,6 +72,20 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
     public void setWeixinNews(List<Weixin.ResultBean.ListBean> list) {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(new WeakReference<>(getActivity()).get()));
         adapter = new WeixinAdapter(new WeakReference<>(getActivity()).get(),this,list);
+        adapter.setItemListener(new WeixinAdapter.ItemListener() {
+            @Override
+            public void onClick(View view) {
+                if(((String)view.getTag()).equals("")) {
+                    return;
+                }
+                Log.d("item","url: "+view.getTag());
+                Bundle bundle = new Bundle();
+                bundle.putString("URL",(String)view.getTag());
+                Intent intent = new Intent(getActivity(),WebDetailActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent,bundle);
+            }
+        });
         mRecyclerView.setAdapter(adapter);
     }
 

@@ -26,6 +26,7 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private Fragment fragment;
     private List<Weixin.ResultBean.ListBean> list;
     private LayoutInflater layoutInflater;
+    private ItemListener itemListener;
 
     public WeixinAdapter(Context context,Fragment fragment,List<Weixin.ResultBean.ListBean> list) {
         this.context = context;
@@ -44,6 +45,12 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         View view;
         if(viewType == NORMAL_TYPE) {
             view = layoutInflater.inflate(R.layout.item_picture,parent,false);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemListener.onClick(view);
+                }
+            });
             WeixinAdapter.NormalViewHolder viewHolder = new WeixinAdapter.NormalViewHolder(view);
             return viewHolder;
         }
@@ -73,8 +80,17 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @BindView(R.id.text_content)
         TextView mContent;
 
+        @BindView(R.id.text_source)
+        TextView mSource;
+
+        @BindView(R.id.text_time)
+        TextView mTime;
+
+        View view;
+
         public NormalViewHolder(View itemView) {
             super(itemView);
+            view = itemView;
 
             ButterKnife.bind(this,itemView);
         }
@@ -84,6 +100,17 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         Weixin.ResultBean.ListBean listBean = list.get(pos);
         Glide.with(fragment).load(listBean.getFirstImg()).into(viewHolder.mPicture);
         viewHolder.mTitle.setText(listBean.getTitle());
+        viewHolder.mSource.setText(listBean.getSource());
+        viewHolder.mTime.setText(listBean.getId().substring(7,15));
+        viewHolder.view.setTag(listBean.getUrl());
 //        viewHolder.mContent.setText(picture.getContent());
+    }
+
+    public void setItemListener(ItemListener itemListener) {
+        this.itemListener = itemListener;
+    }
+
+    public interface ItemListener {
+        void onClick(View view);
     }
 }
