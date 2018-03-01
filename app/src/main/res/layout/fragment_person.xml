@@ -2,12 +2,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="app.main.wangliwei.enablehands.view.fragment.PersonFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
+        android:id="@+id/person_upper"
+        android:layout_width="match_parent"
+        android:background="@mipmap/header"
+        android:layout_height="210dp">
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/person_lower"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="我" />
+        android:orientation="vertical"
+        android:layout_marginTop="242dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_vetor_setting"
+            android:drawablePadding="16dp"
+            android:background="@color/white"
+            android:text="设置"
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/ic_vector_about"
+            android:drawablePadding="16dp"
+            android:background="@color/white"
+            android:text="关于"
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            />
+    </LinearLayout>
 
 </FrameLayout>
