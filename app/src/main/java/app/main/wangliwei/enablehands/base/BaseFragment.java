@@ -17,6 +17,9 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
     private View view;
     private Unbinder unbinder;
+    private boolean isVisibleToUser = false;
+    private boolean isInited = false;
+    private boolean isPrepareView = false;
 
     @Nullable
     @Override
@@ -29,7 +32,35 @@ public abstract class BaseFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        isPrepareView = true;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        lazyInitView();
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        this.isVisibleToUser = isVisibleToUser;
+        lazyInitView();
+    }
+
     public abstract int getLayoutId();
+
+    public abstract void initView();
+
+    private void lazyInitView() {
+        if(!isInited && isVisibleToUser && isPrepareView) {
+            isInited = true;
+            initView();
+        }
+    }
 
     @Override
     public void onDestroyView() {

@@ -43,7 +43,7 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
         //避免重复绘制View
         if(!isAdded) {
             iPicturePresenter = new PicturePresenterImp(this);
-            initView();
+            //initView();
             isAdded = true;
         }
 
@@ -55,13 +55,15 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
         return R.layout.fragment_picture;
     }
 
-    private void initView() {
+    @Override
+    public void initView() {
 //        List<Picture> list = new ArrayList<>();
-//        for(int i=0;i<10;i++) {
-//            list.add(new Picture(0,url,"测试标题",""));
+//        for (int i = 0; i < 10; i++) {
+//            list.add(new Picture(0, url, "测试标题", ""));
 //        }
         iPicturePresenter.getWeixinNews();
     }
+
 
     @Override
     public void scrollToTop() {

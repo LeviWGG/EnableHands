@@ -35,4 +35,9 @@ public class FavoriteFragment extends BaseFragment {
         return R.layout.fragment_favorite;
     }
 
+    @Override
+    public void initView() {
+
+    }
+
 }

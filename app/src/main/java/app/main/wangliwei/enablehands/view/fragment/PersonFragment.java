@@ -35,4 +35,9 @@ public class PersonFragment extends BaseFragment {
         return R.layout.fragment_person;
     }
 
+    @Override
+    public void initView() {
+
+    }
+
 }

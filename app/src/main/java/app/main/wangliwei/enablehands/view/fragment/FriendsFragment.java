@@ -34,4 +34,9 @@ public class FriendsFragment extends BaseFragment {
         return R.layout.fragment_friends;
     }
 
+    @Override
+    public void initView() {
+
+    }
+
 }

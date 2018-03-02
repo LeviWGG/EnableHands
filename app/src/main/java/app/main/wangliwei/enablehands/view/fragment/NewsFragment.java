@@ -3,6 +3,7 @@ package app.main.wangliwei.enablehands.view.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -51,7 +52,7 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
         view = super.onCreateView(inflater,container,savedInstanceState);
 
         iNewsPresenter = new NewsPresenterImp(this);
-        initView();
+        //initView();
 
         return view;
     }
@@ -61,7 +62,8 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
         return R.layout.fragment_news;
     }
 
-    private void initView() {
+    @Override
+    public void initView() {
         smartRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
@@ -70,6 +72,12 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
             }
         });
         iNewsPresenter.getNewsInfo();
+    }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 
     @Override

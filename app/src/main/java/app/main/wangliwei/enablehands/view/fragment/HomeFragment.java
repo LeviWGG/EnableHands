@@ -71,6 +71,11 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
+    public void initView() {
+
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.d("home","========save=========");
