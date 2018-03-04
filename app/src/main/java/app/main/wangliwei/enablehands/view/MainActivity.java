@@ -1,8 +1,14 @@
 package app.main.wangliwei.enablehands.view;
 
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -10,16 +16,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import java.io.FileNotFoundException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseActivity;
@@ -51,6 +60,8 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
+
+    ImageView photoView;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -116,6 +127,16 @@ public class MainActivity extends BaseActivity {
         bottmeTab.addTab(bottmeTab.newTab().setIcon(R.mipmap.account).setText("我"));
 
         navigationView.setItemIconTintList(null);
+        photoView = navigationView.getHeaderView(0)
+                .findViewById(R.id.icon_person);
+        photoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media
+                        .EXTERNAL_CONTENT_URI);
+                startActivityForResult(Intent.createChooser(intent, "请选择图片"), 101);
+            }
+        });
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -125,6 +146,22 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 101) {
+            Uri uri = data.getData();
+            ContentResolver cr = this.getContentResolver();
+            try {
+                Bitmap bmp = BitmapFactory.decodeStream(cr.openInputStream(uri));
+                photoView.setImageBitmap(bmp);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     /**
