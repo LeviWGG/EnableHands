@@ -22,6 +22,7 @@ public interface IPictureContract {
     interface IPictureView {
         void scrollToTop();
         void setWeixinNews(List<Weixin.ResultBean.ListBean> list);
+        void loadMore(List<Weixin.ResultBean.ListBean> list);
     }
 
     interface IPictureModel {}

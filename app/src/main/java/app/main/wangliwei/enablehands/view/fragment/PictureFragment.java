@@ -10,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -31,6 +35,9 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
 
     @BindView(R.id.recycle_picture)
     RecyclerView mRecyclerView;
+
+    @BindView(R.id.layout_weixin_fresh)
+    SmartRefreshLayout smartRefreshLayout;
 
 
     public PictureFragment() {}
@@ -61,6 +68,14 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
 //        for (int i = 0; i < 10; i++) {
 //            list.add(new Picture(0, url, "测试标题", ""));
 //        }
+        smartRefreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                smartRefreshLayout.finishLoadmore(2000);
+                iPicturePresenter.getWeixinNews();
+            }
+        });
+
         iPicturePresenter.getWeixinNews();
     }
 
@@ -89,6 +104,11 @@ public class PictureFragment extends BaseFragment implements IPictureContract.IP
             }
         });
         mRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void loadMore(List<Weixin.ResultBean.ListBean> list) {
+        adapter.setLoadMoreData(list);
     }
 
     @Override

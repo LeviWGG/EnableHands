@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/icon_person"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:src="@mipmap/icon_person"/>

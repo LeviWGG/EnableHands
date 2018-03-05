@@ -47,6 +47,7 @@
             android:id="@+id/text_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_margin="10dp"
             android:background="@drawable/text_bg"
             android:layout_below="@+id/text_title"

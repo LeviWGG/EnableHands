@@ -164,6 +164,36 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+//    /**
+//     * 压缩图片
+//     */
+//    private void setImageBitmap(ImageView photoImageView){
+//        //获取imageview的宽和高
+//        int targetWidth=photoImageView.getWidth();
+//        int targetHeight=photoImageView.getHeight();
+//
+//        //根据图片路径，获取bitmap的宽和高
+//        BitmapFactory.Options options=new BitmapFactory.Options();
+//        options.inJustDecodeBounds=true;
+//        BitmapFactory.decodeFile(photoPath,options);
+//        int photoWidth=options.outWidth;
+//        int photoHeight=options.outHeight;
+//
+//        //获取缩放比例
+//        int inSampleSize=1;
+//        if(photoWidth>targetWidth||photoHeight>targetHeight){
+//            int widthRatio=Math.round((float)photoWidth/targetWidth);
+//            int heightRatio=Math.round((float)photoHeight/targetHeight);
+//            inSampleSize=Math.min(widthRatio,heightRatio);
+//        }
+//
+//        //使用现在的options获取Bitmap
+//        options.inSampleSize=inSampleSize;
+//        options.inJustDecodeBounds=false;
+//        Bitmap bitmap=BitmapFactory.decodeFile(photoPath,options);
+//        photoImageView.setImageBitmap(bitmap);
+//    }
+
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.

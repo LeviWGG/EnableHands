@@ -30,7 +30,7 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_left"
-        android:layout_width="300dp"
+        android:layout_width="270dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header_nav_left"

@@ -101,7 +101,7 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         Glide.with(fragment).load(listBean.getFirstImg()).into(viewHolder.mPicture);
         viewHolder.mTitle.setText(listBean.getTitle());
         viewHolder.mSource.setText(listBean.getSource());
-        viewHolder.mTime.setText(listBean.getId().substring(7,15));
+        //viewHolder.mTime.setText(listBean.getId().substring(7,15));
         viewHolder.view.setTag(listBean.getUrl());
 //        viewHolder.mContent.setText(picture.getContent());
     }
@@ -112,5 +112,10 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public interface ItemListener {
         void onClick(View view);
+    }
+
+    public void setLoadMoreData(List<Weixin.ResultBean.ListBean> list) {
+        this.list.addAll(list);
+        notifyDataSetChanged();
     }
 }
