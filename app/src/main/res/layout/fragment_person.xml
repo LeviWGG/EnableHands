@@ -29,16 +29,28 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="3dp"
             android:drawableLeft="@drawable/ic_vector_about"
             android:drawablePadding="16dp"
             android:background="@color/white"
             android:text="关于"
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            />
+        <TextView
+            android:id="@+id/btn_clear_memory"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:drawableLeft="@drawable/ic_vector_about"
+            android:drawablePadding="16dp"
+            android:background="@color/white"
+            android:text="清除缓存"
             android:textSize="16dp"
             android:gravity="center_vertical"
             android:paddingLeft="16dp"

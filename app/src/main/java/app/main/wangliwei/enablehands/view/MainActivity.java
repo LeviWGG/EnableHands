@@ -24,6 +24,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.bumptech.glide.Glide;
+
 import java.io.FileNotFoundException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -156,7 +158,7 @@ public class MainActivity extends BaseActivity {
             ContentResolver cr = this.getContentResolver();
             try {
                 Bitmap bmp = BitmapFactory.decodeStream(cr.openInputStream(uri));
-                photoView.setImageBitmap(bmp);
+                Glide.with(this).load(bmp).into(photoView);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

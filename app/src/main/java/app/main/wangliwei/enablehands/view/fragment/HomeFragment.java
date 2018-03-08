@@ -87,7 +87,7 @@ public class HomeFragment extends BaseFragment {
         list_fragment.add(new WeakReference<>(new PictureFragment()).get());
         list_fragment.add(new WeakReference<>(new NewsFragment()).get());
         for(int i=0;i<4;i++) {
-            list_fragment.add(new WeakReference<>(new PersonFragment()).get());
+            list_fragment.add(new WeakReference<>(new FriendsFragment()).get());
         }
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),

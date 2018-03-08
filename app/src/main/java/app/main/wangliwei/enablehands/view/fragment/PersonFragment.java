@@ -6,15 +6,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseFragment;
+import app.main.wangliwei.enablehands.presenter.IPersonContract;
+import app.main.wangliwei.enablehands.presenter.PersonPresenterImp;
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PersonFragment extends BaseFragment {
+public class PersonFragment extends BaseFragment implements IPersonContract.IPersonView {
     private View view;
+    private IPersonContract.IPersonPresenter iPersonPresenter;
 
 
     public PersonFragment() {
@@ -26,6 +32,7 @@ public class PersonFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = super.onCreateView(inflater, container, savedInstanceState);
+        iPersonPresenter = new PersonPresenterImp(this);
 
         return view;
     }
@@ -37,7 +44,20 @@ public class PersonFragment extends BaseFragment {
 
     @Override
     public void initView() {
-
     }
 
+    @OnClick({R.id.btn_clear_memory})
+    public void onClick(View view) {
+        int id = view.getId();
+        switch (id) {
+            case R.id.btn_clear_memory :
+                iPersonPresenter.clearMemory();
+                break;
+        }
+    }
+
+    @Override
+    public void showToast(String text) {
+        Toast.makeText(this.getActivity(),text,Toast.LENGTH_SHORT).show();
+    }
 }
