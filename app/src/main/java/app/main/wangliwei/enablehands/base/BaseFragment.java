@@ -8,9 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.leakcanary.RefWatcher;
-
-import app.main.wangliwei.enablehands.app.MyApplication;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -58,9 +55,12 @@ public abstract class BaseFragment extends Fragment {
     private void lazyInitView() {
         if(!isInited && isVisibleToUser && isPrepareView) {
             isInited = true;
+            initData();
             initView();
         }
     }
+
+    protected void initData() {}
 
     @Override
     public void onDestroyView() {
