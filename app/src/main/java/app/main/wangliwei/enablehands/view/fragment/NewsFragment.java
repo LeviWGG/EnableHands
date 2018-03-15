@@ -19,7 +19,7 @@ import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import java.util.List;
 
 import app.main.wangliwei.enablehands.R;
-import app.main.wangliwei.enablehands.base.BaseFragment;
+import app.main.wangliwei.enablehands.base.BaseMVPFragment;
 import app.main.wangliwei.enablehands.bean.NewsInfo;
 import app.main.wangliwei.enablehands.presenter.INewsContract;
 import app.main.wangliwei.enablehands.presenter.NewsPresenterImp;
@@ -30,9 +30,8 @@ import butterknife.BindView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewsFragment extends BaseFragment implements INewsContract.INewsView {
+public class NewsFragment extends BaseMVPFragment<INewsContract.INewsPresenter> implements INewsContract.INewsView {
     private View view;
-    private INewsContract.INewsPresenter iNewsPresenter;
     private NewsAdapter adapter;
 
     @BindView(R.id.recycle_news)
@@ -50,8 +49,6 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = super.onCreateView(inflater,container,savedInstanceState);
-
-        iNewsPresenter = new NewsPresenterImp(this);
         //initView();
 
         return view;
@@ -68,10 +65,10 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
                 smartRefreshLayout.finishLoadmore(2000);
-                iNewsPresenter.getNewsInfo();
+                mPresenter.getNewsInfo();
             }
         });
-        iNewsPresenter.getNewsInfo();
+        mPresenter.getNewsInfo();
     }
 
 
@@ -109,5 +106,10 @@ public class NewsFragment extends BaseFragment implements INewsContract.INewsVie
     @Override
     public void loadMore(List<NewsInfo.T1348647909107Bean> list) {
         adapter.setLoadMoreDatas(list);
+    }
+
+    @Override
+    public INewsContract.INewsPresenter initPresenter() {
+        return new NewsPresenterImp(this);
     }
 }
