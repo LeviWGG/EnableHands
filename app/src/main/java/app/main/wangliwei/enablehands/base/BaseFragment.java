@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import app.main.wangliwei.enablehands.view.widgets.WaitProgressDialog;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -17,6 +18,7 @@ public abstract class BaseFragment extends Fragment {
     private boolean isVisibleToUser = false;
     private boolean isInited = false;
     private boolean isPrepareView = false;
+    protected WaitProgressDialog mWaitProgressDialog;
 
     @Nullable
     @Override
@@ -60,7 +62,21 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    protected void initData() {}
+    protected void initData() {
+        this.mWaitProgressDialog = new WaitProgressDialog(getActivity());
+    }
+
+    protected void showProgressDialog(String msg) {
+        if(mWaitProgressDialog == null)return;
+        mWaitProgressDialog.setMessage(msg);
+        mWaitProgressDialog.show();
+    }
+
+    protected void hideProgressDialog() {
+        if(mWaitProgressDialog != null && mWaitProgressDialog.isShowing()) {
+            mWaitProgressDialog.dismiss();
+        }
+    }
 
     @Override
     public void onDestroyView() {
