@@ -4,6 +4,7 @@ package app.main.wangliwei.enablehands.app;
 import android.app.Application;
 import android.content.Context;
 
+import com.orhanobut.hawk.Hawk;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -27,6 +28,9 @@ public class MyApplication extends Application {
 //        refWatcher = LeakCanary.install(this);
 
         context = super.getApplicationContext();
+
+        //key value存储器初始化
+        Hawk.init(context).build();
     }
 
     public static Context getMyContext() {

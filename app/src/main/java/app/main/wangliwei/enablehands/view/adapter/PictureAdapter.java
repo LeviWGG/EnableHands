@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.lang.ref.WeakReference;
 import java.util.List;
 
+import app.main.wangliwei.baselib.utils.GlideApp;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.bean.Picture;
 import butterknife.BindView;
@@ -82,7 +81,7 @@ public class PictureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private void setHeaderType(final NormalViewHolder viewHolder, int pos) {
         Picture picture = list.get(pos);
-        Glide.with(fragment).load(picture.getPicture()).into(viewHolder.mPicture);
+        GlideApp.with(fragment).load(picture.getPicture()).into(viewHolder.mPicture);
         viewHolder.mTitle.setText(picture.getTitle());
 //        viewHolder.mContent.setText(picture.getContent());
     }

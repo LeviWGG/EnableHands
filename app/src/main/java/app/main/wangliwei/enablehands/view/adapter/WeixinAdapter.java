@@ -4,17 +4,15 @@ package app.main.wangliwei.enablehands.view.adapter;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
+import app.main.wangliwei.baselib.utils.GlideApp;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.bean.Weixin;
 import butterknife.BindView;
@@ -98,7 +96,7 @@ public class WeixinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private void setHeaderType(final WeixinAdapter.NormalViewHolder viewHolder, int pos) {
         Weixin.ResultBean.ListBean listBean = list.get(pos);
-        Glide.with(fragment).load(listBean.getFirstImg()).into(viewHolder.mPicture);
+        GlideApp.with(fragment).load(listBean.getFirstImg()).into(viewHolder.mPicture);
         viewHolder.mTitle.setText(listBean.getTitle());
         viewHolder.mSource.setText(listBean.getSource());
         //viewHolder.mTime.setText(listBean.getId().substring(7,15));

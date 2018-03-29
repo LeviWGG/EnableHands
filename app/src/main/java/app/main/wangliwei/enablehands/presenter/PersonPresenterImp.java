@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.bumptech.glide.Glide;
+import app.main.wangliwei.baselib.utils.GlideApp;
 
 public class PersonPresenterImp extends IPersonContract.IPersonPresenter {
     private static final int UI_TOAST = 1;
@@ -31,7 +31,7 @@ public class PersonPresenterImp extends IPersonContract.IPersonPresenter {
                     mView.showToast("clear success");
                     break;
                 case CLEAR_MEMORY :
-                    Glide.get(mView.getContext()).clearMemory();
+                    GlideApp.get(mView.getContext()).clearMemory();
                     break;
             }
         }
@@ -43,7 +43,7 @@ public class PersonPresenterImp extends IPersonContract.IPersonPresenter {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Glide.get(mView.getContext()).clearDiskCache();
+                GlideApp.get(mView.getContext()).clearDiskCache();
                 uiHandler.sendEmptyMessage(UI_TOAST);
             }
         }).start();

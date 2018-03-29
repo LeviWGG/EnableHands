@@ -11,10 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
+import app.main.wangliwei.baselib.utils.GlideApp;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.bean.NewsInfo;
 import butterknife.BindView;
@@ -101,7 +100,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         //holder.content.setText(newsInfo.getDigest());
         Log.d("adapter","url: "+newsInfo.getUrl());
         holder.view.setTag(newsInfo.getUrl());
-        Glide.with(fragment).load(newsInfo.getImgsrc()).into(holder.imageView);
+        GlideApp.with(fragment).load(newsInfo.getImgsrc()).into(holder.imageView);
     }
 
     public interface ItemListener {

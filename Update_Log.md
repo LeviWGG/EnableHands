@@ -1,3 +1,4 @@
+* 18/03/29 将依赖库添加到baselibrary，以便后续提取
 * 18/03/28 增加MD5加密消息
 * 18/03/27 增加Glide moduel，并解决图片选择OOM问题
 * 18/03/18 增加BaseDialog，增加ProgressDialog显示
