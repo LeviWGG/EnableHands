@@ -1,3 +1,5 @@
+* 18/03/30 baselib加入fragmentation库，并实现support接口基类
+* 18/03/30 增加验证码接收计时工具类
 * 18/03/29 将依赖库添加到baselibrary，以便后续提取
 * 18/03/28 增加MD5加密消息
 * 18/03/27 增加Glide moduel，并解决图片选择OOM问题
