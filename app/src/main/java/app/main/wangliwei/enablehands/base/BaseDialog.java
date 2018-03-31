@@ -38,6 +38,7 @@ public abstract class BaseDialog extends Dialog {
         setContentView(view);
 
         unbinder = ButterKnife.bind(this,view);
+        initView();
     }
 
     @Override
@@ -46,5 +47,7 @@ public abstract class BaseDialog extends Dialog {
         unbinder.unbind();
     }
 
-    abstract int getLayoutId();
+    public abstract int getLayoutId();
+
+    public abstract void initView();
 }

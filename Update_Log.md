@@ -1,3 +1,4 @@
+* 18/03/31 增加一些工具类，自定义Dialog以及Toast
 * 18/03/30 baselib加入fragmentation库，并实现support接口基类
 * 18/03/30 增加验证码接收计时工具类
 * 18/03/29 将依赖库添加到baselibrary，以便后续提取

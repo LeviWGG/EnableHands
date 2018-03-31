@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsTranslucent">false</item> <!--半透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+    </style>
+
+    <style name="ActivityTranslucent">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Color_C7CCDF_14">
+        <item name="android:textColor">@color/Color_C7CCDF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_C7CCDF_15">
+        <item name="android:textColor">@color/Color_C7CCDF</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Color_C7CCDF_16">
+        <item name="android:textColor">@color/Color_C7CCDF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_C7CCDF_17">
+        <item name="android:textColor">@color/Color_C7CCDF</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Color_66BE91_13">
+        <item name="android:textColor">@color/Color_66BE91</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Color_555E70_11">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Color_555E70_12">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Color_555E70_13">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Color_555E70_14">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_555E70_15">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Color_555E70_16">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_555E70_17">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Color_555E70_18">
+        <item name="android:textColor">@color/Color_555E70</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Color_848E9A_11">
+        <item name="android:textColor">@color/Color_848E9A</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Color_848E9A_12">
+        <item name="android:textColor">@color/Color_848E9A</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Color_848E9A_13">
+        <item name="android:textColor">@color/Color_848E9A</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Color_848E9A_14">
+        <item name="android:textColor">@color/Color_848E9A</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_848E9A_16">
+        <item name="android:textColor">@color/Color_848E9A</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_6E7680_11">
+        <item name="android:textColor">@color/Color_6E7680</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Color_F2AD3E_12">
+        <item name="android:textColor">@color/Color_F2AD3E</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Color_F2AD3E_15">
+        <item name="android:textColor">@color/Color_F2AD3E</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Color_F2AD3E_18">
+        <item name="android:textColor">@color/Color_F2AD3E</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Color_1B202B_14">
+        <item name="android:textColor">@color/Color_1B202B</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_1B202B_15">
+        <item name="android:textColor">@color/Color_1B202B</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Color_1B202B_17">
+        <item name="android:textColor">@color/Color_1B202B</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Color_1B202B_18">
+        <item name="android:textColor">@color/Color_1B202B</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Color_FFFFFF_25">
+        <item name="android:textColor">@color/Color_FFFFFF</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="Color_CAD2E9_16">
+        <item name="android:textColor">@color/Color_CAD2E9</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_161920_16">
+        <item name="android:textColor">@color/Color_161920</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_CC4E45_14">
+        <item name="android:textColor">@color/Color_CC4E45</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_CC4E45_16">
+        <item name="android:textColor">@color/Color_CC4E45</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_B4B7BD_12">
+        <item name="android:textColor">@color/Color_B4B7BD</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Color_B4B7BD_14">
+        <item name="android:textColor">@color/Color_B4B7BD</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_B4B7BD_16">
+        <item name="android:textColor">@color/Color_B4B7BD</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_FFFFFF_14">
+        <item name="android:textColor">@color/Color_FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_FFFFFF_16">
+        <item name="android:textColor">@color/Color_FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Color_FFFFFF_18">
+        <item name="android:textColor">@color/Color_FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Color_343B49_14">
+        <item name="android:textColor">@color/Color_343B49</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Color_BF8A36_18">
+        <item name="android:textColor">@color/Color_BF8A36</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

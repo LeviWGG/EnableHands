@@ -8,7 +8,7 @@ import android.widget.TextView;
  * Created by wlw on 2018/3/19.
  */
 
-public class TimerUtil {
+public final class TimerUtil {
     private static Handler uiHandler;
     private static TextView mTextView;
     public static void setMinuteTimer(TextView textView) {

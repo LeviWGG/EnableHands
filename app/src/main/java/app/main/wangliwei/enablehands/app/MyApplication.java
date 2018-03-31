@@ -8,6 +8,8 @@ import com.orhanobut.hawk.Hawk;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
+import app.main.wangliwei.baselib.utils.BaseUtils;
+
 public class MyApplication extends Application {
     private static Context context;
     private RefWatcher refWatcher;
@@ -31,6 +33,9 @@ public class MyApplication extends Application {
 
         //key value存储器初始化
         Hawk.init(context).build();
+
+        //BaseUtils 初始化
+        BaseUtils.init(context);
     }
 
     public static Context getMyContext() {

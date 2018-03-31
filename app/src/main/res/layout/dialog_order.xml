@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_round_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_dialog_title"
+        style="@style/Color_1B202B_17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="title"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_dialog_content"
+        style="@style/Color_555E70_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:lineSpacingExtra="4dp"
+        android:text="@string/content" />
+
+    <CheckBox
+        android:id="@+id/checkbox_dialog"
+        style="@style/Color_555E70_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="31dp"
+        android:button="@drawable/checkbox_style"
+        android:paddingLeft="11dp"
+        android:text="check"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/Color_D6E4F0" />
+
+    <LinearLayout
+        android:id="@+id/layout_button_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_dialog_left"
+            style="@style/Color_555E70_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="21dp"
+            android:paddingTop="21dp"
+            android:text="cancel" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Color_D6E4F0" />
+
+        <TextView
+            android:id="@+id/text_dialog_right"
+            style="@style/Color_F2AD3E_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="21dp"
+            android:paddingTop="21dp"
+            android:text="confirm" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_dialog_only_btn"
+        style="@style/Color_F2AD3E_18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="21dp"
+        android:paddingTop="21dp"
+        android:text="i know" />
+
+</LinearLayout>
