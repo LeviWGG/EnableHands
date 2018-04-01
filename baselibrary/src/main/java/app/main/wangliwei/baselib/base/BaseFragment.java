@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.animation.Animation;
 
+import app.main.wangliwei.baselib.widgets.WaitProgressDialog;
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragmentDelegate;
@@ -23,6 +24,7 @@ public class BaseFragment extends Fragment implements ISupportFragment, ISwipeBa
     final SupportFragmentDelegate mDelegate = new SupportFragmentDelegate(this);
     final SwipeBackFragmentDelegate mSwipeBackDelegate = new SwipeBackFragmentDelegate(this);
     protected FragmentActivity _mActivity;
+    protected WaitProgressDialog mWaitProgressDialog;
 
     @Override
     public SupportFragmentDelegate getSupportDelegate() {
@@ -411,5 +413,26 @@ public class BaseFragment extends Fragment implements ISupportFragment, ISwipeBa
      */
     public <T extends ISupportFragment> T findChildFragment(Class<T> fragmentClass) {
         return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
+    }
+
+    /**
+     * 显示加载框
+     *
+     * @param msg 内容
+     */
+    protected void showProgressDialog(String msg) {
+        if(mWaitProgressDialog != null) {
+            mWaitProgressDialog.setMessage(msg);
+            mWaitProgressDialog.show();
+        }
+    }
+
+    /**
+     * 隐藏加载框
+     */
+    protected void hideProgressDialog() {
+        if(mWaitProgressDialog != null && mWaitProgressDialog.isShowing()) {
+            mWaitProgressDialog.dismiss();
+        }
     }
 }

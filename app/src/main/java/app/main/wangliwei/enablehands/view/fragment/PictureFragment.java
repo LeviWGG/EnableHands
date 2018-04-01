@@ -75,6 +75,7 @@ public class PictureFragment extends BaseMVPFragment<IPictureContract.IPicturePr
         });
 
         mPresenter.getWeixinNews();
+        showProgressDialog("加载中");
     }
 
 
@@ -102,6 +103,7 @@ public class PictureFragment extends BaseMVPFragment<IPictureContract.IPicturePr
             }
         });
         mRecyclerView.setAdapter(adapter);
+        hideProgressDialog();
     }
 
     @Override

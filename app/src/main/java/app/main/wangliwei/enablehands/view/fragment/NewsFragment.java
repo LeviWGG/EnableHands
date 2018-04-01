@@ -69,6 +69,7 @@ public class NewsFragment extends BaseMVPFragment<INewsContract.INewsPresenter> 
             }
         });
         mPresenter.getNewsInfo();
+        showProgressDialog("加载中");
     }
 
 
@@ -101,6 +102,7 @@ public class NewsFragment extends BaseMVPFragment<INewsContract.INewsPresenter> 
         });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(adapter);
+        hideProgressDialog();
     }
 
     @Override

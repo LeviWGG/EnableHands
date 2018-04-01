@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 
+import app.main.wangliwei.baselib.widgets.WaitProgressDialog;
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.ISupportFragment;
@@ -20,6 +21,7 @@ import me.yokeyword.fragmentation_swipeback.core.SwipeBackActivityDelegate;
 public class BaseActivity extends AppCompatActivity implements ISupportActivity, ISwipeBackActivity {
     final SupportActivityDelegate mDelegate = new SupportActivityDelegate(this);
     final SwipeBackActivityDelegate mSwipeBackDelegate = new SwipeBackActivityDelegate(this);
+    protected WaitProgressDialog mWaitProgressDialog;
 
     @Override
     public SupportActivityDelegate getSupportDelegate() {
@@ -304,5 +306,26 @@ public class BaseActivity extends AppCompatActivity implements ISupportActivity,
      */
     public <T extends ISupportFragment> T findFragment(Class<T> fragmentClass) {
         return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
+    }
+
+    /**
+     * 显示加载框
+     *
+     * @param msg 内容
+     */
+    protected void showProgressDialog(String msg) {
+        if(mWaitProgressDialog != null) {
+            mWaitProgressDialog.setMessage(msg);
+            mWaitProgressDialog.show();
+        }
+    }
+
+    /**
+     * 隐藏加载框
+     */
+    protected void hideProgressDialog() {
+        if(mWaitProgressDialog != null && mWaitProgressDialog.isShowing()) {
+            mWaitProgressDialog.dismiss();
+        }
     }
 }
