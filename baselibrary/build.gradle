@@ -82,4 +82,6 @@ dependencies {
     //fragmentation
     api 'me.yokeyword:fragmentation-core:1.3.3'//https://github.com/YoKeyword/Fragmentation/blob/master/README_CN.md
     api 'me.yokeyword:fragmentation-swipeback:1.3.2'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
 }

@@ -20,7 +20,7 @@ import me.yokeyword.fragmentation_swipeback.core.ISwipeBackFragment;
 import me.yokeyword.fragmentation_swipeback.core.SwipeBackFragmentDelegate;
 
 
-public class BaseFragment extends Fragment implements ISupportFragment, ISwipeBackFragment {
+public abstract class BaseFragment extends Fragment implements ISupportFragment, ISwipeBackFragment {
     final SupportFragmentDelegate mDelegate = new SupportFragmentDelegate(this);
     final SwipeBackFragmentDelegate mSwipeBackDelegate = new SwipeBackFragmentDelegate(this);
     protected FragmentActivity _mActivity;
@@ -413,26 +413,5 @@ public class BaseFragment extends Fragment implements ISupportFragment, ISwipeBa
      */
     public <T extends ISupportFragment> T findChildFragment(Class<T> fragmentClass) {
         return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
-    }
-
-    /**
-     * 显示加载框
-     *
-     * @param msg 内容
-     */
-    protected void showProgressDialog(String msg) {
-        if(mWaitProgressDialog != null) {
-            mWaitProgressDialog.setMessage(msg);
-            mWaitProgressDialog.show();
-        }
-    }
-
-    /**
-     * 隐藏加载框
-     */
-    protected void hideProgressDialog() {
-        if(mWaitProgressDialog != null && mWaitProgressDialog.isShowing()) {
-            mWaitProgressDialog.dismiss();
-        }
     }
 }

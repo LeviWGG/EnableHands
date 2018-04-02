@@ -18,7 +18,7 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
 import me.yokeyword.fragmentation_swipeback.core.ISwipeBackActivity;
 import me.yokeyword.fragmentation_swipeback.core.SwipeBackActivityDelegate;
 
-public class BaseActivity extends AppCompatActivity implements ISupportActivity, ISwipeBackActivity {
+public abstract class BaseActivity extends AppCompatActivity implements ISupportActivity, ISwipeBackActivity {
     final SupportActivityDelegate mDelegate = new SupportActivityDelegate(this);
     final SwipeBackActivityDelegate mSwipeBackDelegate = new SwipeBackActivityDelegate(this);
     protected WaitProgressDialog mWaitProgressDialog;
@@ -306,26 +306,5 @@ public class BaseActivity extends AppCompatActivity implements ISupportActivity,
      */
     public <T extends ISupportFragment> T findFragment(Class<T> fragmentClass) {
         return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
-    }
-
-    /**
-     * 显示加载框
-     *
-     * @param msg 内容
-     */
-    protected void showProgressDialog(String msg) {
-        if(mWaitProgressDialog != null) {
-            mWaitProgressDialog.setMessage(msg);
-            mWaitProgressDialog.show();
-        }
-    }
-
-    /**
-     * 隐藏加载框
-     */
-    protected void hideProgressDialog() {
-        if(mWaitProgressDialog != null && mWaitProgressDialog.isShowing()) {
-            mWaitProgressDialog.dismiss();
-        }
     }
 }
