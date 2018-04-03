@@ -1,3 +1,4 @@
+* 18/04/03 增加对Bitmap的Base64编码，已分配子线程
 * 18/04/02 对Baselib增加MVP基类
 * 18/03/31 增加一些工具类，自定义Dialog以及Toast
 * 18/03/30 baselib加入fragmentation库，并实现support接口基类

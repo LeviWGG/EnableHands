@@ -93,6 +93,11 @@ public abstract class BaseCompatFragment extends BaseFragment {
         }
     }
 
+    /**
+     * 设置转场动画
+     *
+     * @return 传入动画
+     */
     @Override
     public FragmentAnimator onCreateFragmentAnimator() {
         return new DefaultHorizontalAnimator();
