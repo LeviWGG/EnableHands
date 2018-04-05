@@ -25,7 +25,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:lineSpacingExtra="4dp"
-        android:text="@string/content" />
+        android:text="@string/content"
+        android:visibility="gone"/>
 
     <CheckBox
         android:id="@+id/checkbox_dialog"

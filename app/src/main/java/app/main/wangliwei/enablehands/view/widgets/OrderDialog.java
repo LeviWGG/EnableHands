@@ -2,6 +2,7 @@ package app.main.wangliwei.enablehands.view.widgets;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.Display;
@@ -10,6 +11,9 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseDialog;
@@ -21,6 +25,7 @@ import butterknife.OnClick;
  */
 
 public class OrderDialog extends BaseDialog {
+
     private OnItemOnClickListener onItemOnClickListener;
 
     @BindView(R.id.text_dialog_title)
@@ -75,6 +80,11 @@ public class OrderDialog extends BaseDialog {
         onItemOnClickListener.onItemOnClick(view, OrderDialog.this);
     }
 
+    @IntDef({View.GONE,View.VISIBLE,View.INVISIBLE})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface Visibility {}
+
+
     public OrderDialog setTitleCustom(String msg) {
         if (title.getVisibility() == View.GONE) {
             title.setVisibility(View.VISIBLE);
@@ -92,12 +102,36 @@ public class OrderDialog extends BaseDialog {
     }
 
     public OrderDialog setContent(String msg) {
+        if(View.GONE == this.content.getVisibility()) {
+            this.content.setVisibility(View.VISIBLE);
+        }
         this.content.setText(msg);
         return this;
     }
 
     public OrderDialog setContent(int resId) {
+        if(View.GONE == this.content.getVisibility()) {
+            this.content.setVisibility(View.VISIBLE);
+        }
         this.content.setText(resId);
+        return this;
+    }
+
+    public OrderDialog setContent(int resId,float size) {
+        if(View.GONE == this.content.getVisibility()) {
+            this.content.setVisibility(View.VISIBLE);
+        }
+        this.content.setTextSize(size);
+        this.content.setText(resId);
+        return this;
+    }
+
+    public OrderDialog setContent(String msg,float size) {
+        if(View.GONE == this.content.getVisibility()) {
+            this.content.setVisibility(View.VISIBLE);
+        }
+        this.content.setTextSize(size);
+        this.content.setText(msg);
         return this;
     }
 
