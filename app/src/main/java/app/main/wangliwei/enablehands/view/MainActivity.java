@@ -22,6 +22,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.io.FileNotFoundException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import app.main.wangliwei.baselib.utils.GlideApp;
+import app.main.wangliwei.baselib.utils.ImageUtils;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseActivity;
 import app.main.wangliwei.enablehands.view.fragment.FavoriteFragment;
@@ -156,6 +159,7 @@ public class MainActivity extends BaseActivity {
             ContentResolver cr = this.getContentResolver();
             try {
                 Bitmap bmp = BitmapFactory.decodeStream(cr.openInputStream(uri));
+                ImageUtils.compressByQuality(bmp,30);
                 GlideApp.with(this).load(bmp).skipMemoryCache(true).into(photoView);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
