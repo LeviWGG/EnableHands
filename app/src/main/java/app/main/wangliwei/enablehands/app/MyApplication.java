@@ -18,6 +18,7 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import app.main.wangliwei.baselib.utils.BaseUtils;
+import app.main.wangliwei.enablehands.R;
 
 public class MyApplication extends Application {
     private static Context context;
@@ -28,6 +29,8 @@ public class MyApplication extends Application {
             @NonNull
             @Override
             public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
+                layout.setPrimaryColorsId(R.color.Color_1A1E26, R.color.Color_555E70);//全局设置主题颜色
+                layout.setReboundDuration(150);
                 return new ClassicsHeader(getMyContext());
             }
         });
@@ -35,6 +38,8 @@ public class MyApplication extends Application {
             @NonNull
             @Override
             public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
+                layout.setPrimaryColorsId(R.color.Color_1A1E26, R.color.Color_555E70);//全局设置主题颜色
+                layout.setReboundDuration(150);
                 return new ClassicsFooter(getMyContext());
             }
         });
