@@ -23,8 +23,10 @@ public final class Base64Util {
                 String base64 = null;
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 bmp.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+                byteArrayOutputStream.flush();
+                byteArrayOutputStream.close();
                 byte[] bytes = byteArrayOutputStream.toByteArray();
-                base64 = Base64.encodeToString(bytes,Base64.DEFAULT);
+                base64 = Base64.encodeToString(bytes,Base64.NO_WRAP);
                 emitter.onNext(base64);
             }
         }).subscribeOn(Schedulers.io())

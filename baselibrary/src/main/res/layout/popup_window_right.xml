@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/icon_zc_xl"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_only"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_up"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/Color_2B313F">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
