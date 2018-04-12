@@ -44,10 +44,12 @@ public final class TimerUtil {
     }
 
     public static void detach() {
-        if (null == mTextView || uiHandler == null)return;
+        if (null == mTextView)return;
         uiHandler.removeCallbacksAndMessages(null);
-        mTextView.setText("获取验证码");
-        mTextView.setEnabled(true);
-        mTextView = null;
+        if(uiHandler == null) {
+            mTextView.setText("获取验证码");
+            mTextView.setEnabled(true);
+            mTextView = null;
+        }
     }
 }

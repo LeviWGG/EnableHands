@@ -1,4 +1,4 @@
-package app.main.wangliwei.enablehands.view.widgets;
+package app.main.wangliwei.baselib.widgets;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,10 +15,8 @@ import android.widget.TextView;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import app.main.wangliwei.enablehands.R;
-import app.main.wangliwei.enablehands.base.BaseDialog;
-import butterknife.BindView;
-import butterknife.OnClick;
+import app.main.wangliwei.baselib.R;
+import app.main.wangliwei.baselib.base.BaseDialog;
 
 /**
  * Created by wlw on 2018/3/22.
@@ -28,25 +26,18 @@ public class OrderDialog extends BaseDialog {
 
     private OnItemOnClickListener onItemOnClickListener;
 
-    @BindView(R.id.text_dialog_title)
     TextView title;
 
-    @BindView(R.id.text_dialog_content)
     TextView content;
 
-    @BindView(R.id.text_dialog_left)
     TextView btnLeft;
 
-    @BindView(R.id.text_dialog_right)
     TextView btnRight;
 
-    @BindView(R.id.checkbox_dialog)
     CheckBox checkBox;
 
-    @BindView(R.id.layout_button_two)
     LinearLayout layoutTwoBtn;
 
-    @BindView(R.id.text_dialog_only_btn)
     TextView btnOnly;
 
     public OrderDialog(@NonNull Context context) {
@@ -62,11 +53,18 @@ public class OrderDialog extends BaseDialog {
     }
 
     @Override
-    public void initView() {
+    public void initView(View view) {
         Display display = getWindow().getWindowManager().getDefaultDisplay();
         WindowManager.LayoutParams lp = getWindow().getAttributes();
         lp.width = (int)(display.getWidth() * 0.8);
         getWindow().setAttributes(lp);
+        title = view.findViewById(R.id.text_dialog_title);
+        content = view.findViewById(R.id.text_dialog_content);
+        btnLeft = view.findViewById(R.id.text_dialog_left);
+        btnRight = view.findViewById(R.id.text_dialog_right);
+        checkBox = view.findViewById(R.id.checkbox_dialog);
+        layoutTwoBtn = view.findViewById(R.id.layout_button_two);
+        btnOnly = view.findViewById(R.id.text_dialog_only_btn);
     }
 
     @Override
@@ -74,11 +72,6 @@ public class OrderDialog extends BaseDialog {
         return R.layout.dialog_order;
     }
 
-    @OnClick({R.id.text_dialog_only_btn, R.id.text_dialog_left, R.id.text_dialog_right})
-    public void onClick(View view) {
-        if (onItemOnClickListener == null) return;
-        onItemOnClickListener.onItemOnClick(view, OrderDialog.this);
-    }
 
     @IntDef({View.GONE,View.VISIBLE,View.INVISIBLE})
     @Retention(RetentionPolicy.SOURCE)
