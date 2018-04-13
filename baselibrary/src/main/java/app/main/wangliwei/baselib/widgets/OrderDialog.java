@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.ArrayList;
+import java.util.List;
 
 import app.main.wangliwei.baselib.R;
 import app.main.wangliwei.baselib.base.BaseDialog;
@@ -65,6 +67,22 @@ public class OrderDialog extends BaseDialog {
         checkBox = view.findViewById(R.id.checkbox_dialog);
         layoutTwoBtn = view.findViewById(R.id.layout_button_two);
         btnOnly = view.findViewById(R.id.text_dialog_only_btn);
+        List<View> viewList = new ArrayList<>();
+        viewList.add(title);
+        viewList.add(content);
+        viewList.add(btnLeft);
+        viewList.add(btnRight);
+        viewList.add(checkBox);
+        viewList.add(layoutTwoBtn);
+        viewList.add(btnOnly);
+        for (View item : viewList) {
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemOnClickListener.onItemOnClick(view,OrderDialog.this);
+                }
+            });
+        }
     }
 
     @Override
