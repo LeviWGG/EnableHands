@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -31,7 +32,9 @@ public class PopupWindowFactory extends PopupWindow {
     private View windowView;
     private Context context;
     private String[] items;
+    private List<String> listItem;
 
+    private ImageView imageUp;
     private RecyclerView recyclerView;
     private PopUpWindowAdapter popUpWindowAdapter;
 
@@ -46,11 +49,27 @@ public class PopupWindowFactory extends PopupWindow {
             windowView = LayoutInflater.from(context).inflate(R.layout.popup_window_right,null);
         }
         recyclerView = windowView.findViewById(R.id.recycler_only);
+        imageUp = windowView.findViewById(R.id.image_up);
         popUpWindowAdapter = new PopUpWindowAdapter(R.layout.item_assets_type);
+        listItem = Arrays.asList(items);
+    }
+
+    public PopupWindowFactory(Context context,int direction,List<String> list) {
+        super(context);
+        this.context = context;
+        if(LEFT == direction) {
+            windowView = LayoutInflater.from(context).inflate(R.layout.popup_window_left,null);
+        }
+        if(RIGHT == direction) {
+            windowView = LayoutInflater.from(context).inflate(R.layout.popup_window_right,null);
+        }
+        recyclerView = windowView.findViewById(R.id.recycler_only);
+        imageUp = windowView.findViewById(R.id.image_up);
+        popUpWindowAdapter = new PopUpWindowAdapter(R.layout.item_assets_type);
+        listItem = list;
     }
 
     private void initView(View view) {
-        List<String> listItem = Arrays.asList(items);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(context)
                 .colorResId(R.color.Color_242B38)

@@ -14,6 +14,7 @@ public final class TimerUtil {
     public static void setMinuteTimer(TextView textView) {
         if(uiHandler == null)uiHandler = new Handler(Looper.getMainLooper());
 
+        detach();
         textView.setEnabled(false);
         uiHandler.post(getMinuteRunnable(textView,uiHandler));
     }
