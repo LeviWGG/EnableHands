@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import app.main.wangliwei.baselib.widgets.OrderDialog;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseMVPFragment;
 import app.main.wangliwei.enablehands.presenter.IPersonContract;
@@ -42,12 +43,26 @@ public class PersonFragment extends BaseMVPFragment<IPersonContract.IPersonPrese
     public void initView() {
     }
 
-    @OnClick({R.id.btn_clear_memory})
+    @OnClick({R.id.btn_clear_memory,R.id.text_about})
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
             case R.id.btn_clear_memory :
                 mPresenter.clearMemory();
+                break;
+            case R.id.text_about :
+                OrderDialog orderDialog = new OrderDialog(getActivity());
+                orderDialog.show();
+                orderDialog.setTitleCustom("这是自定义标题")
+                        .setContent("这是自定义内容")
+                        .setLeft("取消").setRight("确认")
+                        .setCheckBox("勾选")
+                        .setOnItemOnClickListener(new OrderDialog.OnItemOnClickListener() {
+                            @Override
+                            public void onItemOnClick(View view, OrderDialog orderDialog) {
+                                //orderDialog.dismiss();
+                            }
+                        });
                 break;
         }
     }
