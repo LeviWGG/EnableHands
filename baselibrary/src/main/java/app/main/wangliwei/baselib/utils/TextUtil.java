@@ -2,6 +2,9 @@ package app.main.wangliwei.baselib.utils;
 
 import android.text.TextUtils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by wlw on 2018/4/10.
  */
@@ -31,7 +34,7 @@ public final class TextUtil {
     }
 
     /**
-     * 影藏手机号
+     * 隐藏手机号
      *
      * @param mobile
      * @return
@@ -45,5 +48,18 @@ public final class TextUtil {
         } else {
             return mobile;
         }
+    }
+
+    /**
+     * 判定是否8位以内数字
+     *
+     * @param number
+     * @return
+     */
+    public static boolean isNumber(float number) {
+        Pattern patternNumber = Pattern.compile("^([0-9]+(.[0-9]{1,8})?)$");
+        Matcher matcherNumber = patternNumber.matcher(String.valueOf(number));
+        boolean bNumber = matcherNumber.matches();
+        return bNumber;
     }
 }
