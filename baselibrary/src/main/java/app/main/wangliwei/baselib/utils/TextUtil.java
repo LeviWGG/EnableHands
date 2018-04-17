@@ -62,4 +62,16 @@ public final class TextUtil {
         boolean bNumber = matcherNumber.matches();
         return bNumber;
     }
+
+    /**
+     * 判定密码是否符合8-20位非纯数字字符，不含特殊字符
+     *
+     * @param password
+     * @return
+     */
+    public static boolean isillegal(String password) {
+        Pattern patternNumber = Pattern.compile("^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{8,20}");
+        Matcher matcherNumber = patternNumber.matcher(password);
+        return !matcherNumber.matches();
+    }
 }
