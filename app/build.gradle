@@ -45,8 +45,10 @@ dependencies {
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     implementation 'com.android.support:support-v4:27.1.0'
 
-    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'//https://github.com/yqritc/RecyclerView-FlexibleDivider
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'//https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+//https://github.com/yqritc/RecyclerView-FlexibleDivider
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
+//https://github.com/CymChad/BaseRecyclerViewAdapterHelper
 
     //butterknife
     compile 'com.jakewharton:butterknife:8.5.1'

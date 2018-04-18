@@ -1,6 +1,7 @@
 package app.main.wangliwei.enablehands.view.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseMVPFragment;
 import app.main.wangliwei.enablehands.presenter.IPersonContract;
 import app.main.wangliwei.enablehands.presenter.PersonPresenterImp;
+import app.main.wangliwei.enablehands.view.ScanQRCodeActivity;
 import butterknife.OnClick;
 
 /**
@@ -48,7 +50,9 @@ public class PersonFragment extends BaseMVPFragment<IPersonContract.IPersonPrese
         int id = view.getId();
         switch (id) {
             case R.id.btn_clear_memory :
-                mPresenter.clearMemory();
+                //mPresenter.clearMemory();
+                Intent intent = new Intent(getActivity(),ScanQRCodeActivity.class);
+                startActivity(intent);
                 break;
             case R.id.text_about :
                 OrderDialog orderDialog = new OrderDialog(getActivity());

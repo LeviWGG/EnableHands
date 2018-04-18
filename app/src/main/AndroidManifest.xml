@@ -9,6 +9,7 @@
     <!-- 外部存储读权限，调试工具加载本地补丁需要 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".app.MyApplication"
@@ -18,11 +19,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
-        </activity>
-        <activity android:name=".view.WebDetailActivity"
-            android:process="app.main.wangliwei.webdetail"/>
-        <activity android:name=".view.SplashActivity"
+        <activity android:name=".view.MainActivity"></activity>
+        <activity
+            android:name=".view.WebDetailActivity"
+            android:process="app.main.wangliwei.webdetail" />
+        <activity
+            android:name=".view.SplashActivity"
             android:theme="@style/StartTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.ScanQRCodeActivity"></activity>
     </application>
 
 </manifest>
