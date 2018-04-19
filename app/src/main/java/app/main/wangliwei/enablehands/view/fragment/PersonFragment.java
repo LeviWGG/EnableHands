@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import app.main.wangliwei.baselib.utils.PermissionConstants;
+import app.main.wangliwei.baselib.utils.PermissionUtils;
 import app.main.wangliwei.baselib.widgets.OrderDialog;
 import app.main.wangliwei.enablehands.R;
 import app.main.wangliwei.enablehands.base.BaseMVPFragment;
@@ -65,6 +67,7 @@ public class PersonFragment extends BaseMVPFragment<IPersonContract.IPersonPrese
                             @Override
                             public void onItemOnClick(View view, OrderDialog orderDialog) {
                                 //orderDialog.dismiss();
+                                PermissionUtils.permission(PermissionConstants.CAMERA).request();
                             }
                         });
                 break;
