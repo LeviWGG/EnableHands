@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.main.wangliwei.baselib" >
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application>
         <activity
             android:name=".utils.PermissionUtils$PermissionActivity"
