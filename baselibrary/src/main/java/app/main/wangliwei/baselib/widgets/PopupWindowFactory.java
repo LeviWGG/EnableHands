@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 
@@ -78,6 +79,7 @@ public class PopupWindowFactory extends PopupWindow {
         recyclerView.setAdapter(popUpWindowAdapter);
         popUpWindowAdapter.setNewData(listItem);
         setWidth(view.getWidth());
+        setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         setFocusable(true);
         setContentView(windowView);
         setBackgroundDrawable(new ColorDrawable(0));
