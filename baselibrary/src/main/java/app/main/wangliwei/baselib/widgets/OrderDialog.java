@@ -19,6 +19,7 @@ import java.util.List;
 
 import app.main.wangliwei.baselib.R;
 import app.main.wangliwei.baselib.base.BaseDialog;
+import app.main.wangliwei.baselib.utils.ViewUtil;
 
 /**
  * Created by wlw on 2018/3/22.
@@ -41,6 +42,11 @@ public class OrderDialog extends BaseDialog {
     LinearLayout layoutTwoBtn;
 
     TextView btnOnly;
+
+    LinearLayout dialogLayout;
+
+    View viewLine1;
+    View viewLine2;
 
     public OrderDialog(@NonNull Context context) {
         this(context, R.style.dialog);
@@ -67,6 +73,9 @@ public class OrderDialog extends BaseDialog {
         checkBox = view.findViewById(R.id.checkbox_dialog);
         layoutTwoBtn = view.findViewById(R.id.layout_button_two);
         btnOnly = view.findViewById(R.id.text_dialog_only_btn);
+        dialogLayout = view.findViewById(R.id.dialog_layout);
+        viewLine1 = view.findViewById(R.id.view_line1);
+        viewLine2 = view.findViewById(R.id.view_line2);
         List<View> viewList = new ArrayList<>();
         viewList.add(title);
         viewList.add(content);
@@ -112,6 +121,24 @@ public class OrderDialog extends BaseDialog {
         return this;
     }
 
+    public OrderDialog setTitleCustom(String msg,int color) {
+        if (title.getVisibility() == View.GONE) {
+            title.setVisibility(View.VISIBLE);
+        }
+        title.setText(msg);
+        title.setTextColor(ViewUtil.getResourceColor(color));
+        return this;
+    }
+
+    public OrderDialog setTitleCustom(int resId,int color) {
+        if (title.getVisibility() == View.GONE) {
+            title.setVisibility(View.VISIBLE);
+        }
+        title.setText(resId);
+        title.setTextColor(ViewUtil.getResourceColor(color));
+        return this;
+    }
+
     public OrderDialog setContent(String msg) {
         if(View.GONE == this.content.getVisibility()) {
             this.content.setVisibility(View.VISIBLE);
@@ -146,6 +173,11 @@ public class OrderDialog extends BaseDialog {
         return this;
     }
 
+    public OrderDialog setContentColor(int color) {
+        content.setTextColor(ViewUtil.getResourceColor(color));
+        return this;
+    }
+
     public OrderDialog setLeft(String msg) {
         if (layoutTwoBtn.getVisibility() == View.GONE) {
             layoutTwoBtn.setVisibility(View.VISIBLE);
@@ -170,7 +202,17 @@ public class OrderDialog extends BaseDialog {
             btnOnly.setVisibility(View.GONE);
         }
         btnLeft.setText(resId);
-        btnLeft.setTextColor(color);
+        btnLeft.setTextColor(ViewUtil.getResourceColor(color));
+        return this;
+    }
+
+    public OrderDialog setLeft(String msg, int color) {
+        if (layoutTwoBtn.getVisibility() == View.GONE) {
+            layoutTwoBtn.setVisibility(View.VISIBLE);
+            btnOnly.setVisibility(View.GONE);
+        }
+        btnLeft.setText(msg);
+        btnLeft.setTextColor(ViewUtil.getResourceColor(color));
         return this;
     }
 
@@ -198,7 +240,16 @@ public class OrderDialog extends BaseDialog {
             btnOnly.setVisibility(View.GONE);
         }
         btnRight.setText(resId);
-        btnRight.setTextColor(color);
+        btnRight.setTextColor(ViewUtil.getResourceColor(color));
+        return this;
+    }
+    public OrderDialog setRight(String msg, int color) {
+        if (layoutTwoBtn.getVisibility() == View.GONE) {
+            layoutTwoBtn.setVisibility(View.VISIBLE);
+            btnOnly.setVisibility(View.GONE);
+        }
+        btnRight.setText(msg);
+        btnRight.setTextColor(ViewUtil.getResourceColor(color));
         return this;
     }
 
@@ -242,5 +293,16 @@ public class OrderDialog extends BaseDialog {
 
     public void setOnItemOnClickListener(OnItemOnClickListener onItemOnClickListener) {
         this.onItemOnClickListener = onItemOnClickListener;
+    }
+
+    public OrderDialog setLineColor(int color) {
+        viewLine1.setBackgroundColor(ViewUtil.getResourceColor(color));
+        viewLine2.setBackgroundColor(ViewUtil.getResourceColor(color));
+        return this;
+    }
+
+    public OrderDialog setBackgroundResource(int res) {
+        dialogLayout.setBackgroundResource(res);
+        return this;
     }
 }
