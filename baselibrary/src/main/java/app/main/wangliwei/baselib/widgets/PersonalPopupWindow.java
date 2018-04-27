@@ -8,6 +8,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class PersonalPopupWindow extends PopupWindow {
         //设置点击空白处消失
         setTouchable(true);
         setOutsideTouchable(true);
-        setClippingEnabled(false);
+        //setClippingEnabled(false);
 
         WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         int w = wm.getDefaultDisplay().getWidth();
@@ -43,6 +44,8 @@ public class PersonalPopupWindow extends PopupWindow {
         Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         bitmap.eraseColor(Color.parseColor("#88000000"));//填充颜色
         setBackgroundDrawable(new BitmapDrawable(context.getResources(), bitmap));
+
+        setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         initView();
     }
@@ -87,6 +90,10 @@ public class PersonalPopupWindow extends PopupWindow {
                     mOnItemClickListener.onCancelClicked();
             }
         });
+    }
+
+    public void showAtLocation(View parent) {
+        this.showAtLocation(parent, Gravity.BOTTOM, 0, 0);
     }
 
     @Override
