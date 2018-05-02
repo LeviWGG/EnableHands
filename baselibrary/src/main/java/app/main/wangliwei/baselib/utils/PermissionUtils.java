@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -274,6 +275,11 @@ public final class PermissionUtils {
 
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
+            if (sInstance == null) {
+                Log.e("PermissionUtils", "request permissions failed");
+                finish();
+                return;
+            }
             if (sInstance.mThemeCallback != null) {
                 sInstance.mThemeCallback.onActivityCreate(this);
             }
