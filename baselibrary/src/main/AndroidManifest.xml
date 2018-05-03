@@ -10,15 +10,16 @@
             android:multiprocess="true"
             android:theme="@style/ActivityTranslucent"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
-    </application>
 
-    <provider
-        android:name="android.support.v4.content.FileProvider4Util"
-        android:authorities="${applicationId}.utils.provider"
-        android:exported="false"
-        android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/util_provider_paths" />
-    </provider>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.utils.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/util_provider_paths" />
+        </provider>
+    </application>
 </manifest>

@@ -1,3 +1,4 @@
+* 18/05/03 修复URIUtil兼容问题，增加RxJava错误处理
 * 18/05/02 修复NumberUtils计算精度问题、修复PermissionUtils 空异常
 * 18/05/01 增加sdcard路径相关工具类
 * 18/04/30 加入解析File URI工具类，以解决7.0以上对Uri的不公开

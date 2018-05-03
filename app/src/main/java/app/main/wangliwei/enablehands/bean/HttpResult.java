@@ -1,7 +1,7 @@
 package app.main.wangliwei.enablehands.bean;
 
 
-import app.main.wangliwei.enablehands.http.BaseObserver;
+import app.main.wangliwei.enablehands.http.BaseExceptionEngine;
 
 public class HttpResult<T> {
     private int status;
@@ -12,7 +12,7 @@ public class HttpResult<T> {
     }
 
     public HttpResult(String msg) {
-        this.status = BaseObserver.HTTP_STATUS_DEFAULT_ERROR;
+        this.status = BaseExceptionEngine.HTTP_STATUS_DEFAULT_ERROR;
         this.msg = msg;
     }
 
